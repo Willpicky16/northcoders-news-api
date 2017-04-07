@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const config = require('./config');
 const apiRouter = require('./routes/api');
-const db = 'mongodb://will:admin@ds155150.mlab.com:55150/northcoders-news-api'
+const db = 'mongodb://will:admin@ds155150.mlab.com:55150/northcoders-news-api';
 // const db = config.DB[process.env.NODE_ENV] || process.env.DB;
 const PORT = config.PORT[process.env.NODE_ENV] || process.env.PORT;
 
