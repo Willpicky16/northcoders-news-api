@@ -20,9 +20,9 @@ function getArticles (req, res) {
         })
       }, done)
     }
-  ], function (err, results) {
+  ], function (err, articles) {
     if (err) return res.status(500).send({err: err});
-    res.status(200).send({results});
+    res.status(200).send({articles});
   })
 }
 
