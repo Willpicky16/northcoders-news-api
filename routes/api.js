@@ -10,10 +10,6 @@ router.route('/').get(function (req, res) {
   res.status(200).send({status: 'OK'});
 });
 
-router.route('/*').get(function (req, res) {
-  res.status(404).send({reason: 'ROUTE NOT FOUND'})
-});
-
 router.route('/topics').get(topicController.getAllTopics);
 router.route('/topics/:topic_id').get(topicController.getCertainTopic);
 router.route('/topics/:topic_id/articles').get(topicController.getCertainTopicArticles);
@@ -31,5 +27,9 @@ router.route('/articles/:article_id').put(voteController.articleVote);
 router.route('/comments/:comment_id').put(voteController.commentVote);
 
 router.route('/comments/:comment_id').delete(commentController.deleteComment);
+
+router.route('/*').get(function (req, res) {
+  res.status(404).send({reason: 'ROUTE NOT FOUND'})
+});
 
 module.exports = router;
