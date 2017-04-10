@@ -29,7 +29,7 @@ app.use('/*', function (req, res) {
   response.status(404).send({reason: 'ROUTE NOT FOUND'})
 })
 
-app.listen(process.env.PORT || PORT, function () {
+app.listen(PORT, function () {
   console.log(`listening on port ${PORT}`);
 });
 
